@@ -1,5 +1,5 @@
 function [OUT]=mr_optimumexample_worker(signalname,noisename,optionname,optionstruct,NR,B)
-%PUBBLICAZIONE_INVIVO_ANALYSIS_worker(signalname cell array,noisename,optionname,options struct, number rof replica,box)
+%INVIVO_ANALYSIS_worker(signalname cell array,noisename,optionname,options struct, number rof replica,box)
 
 
 
@@ -66,15 +66,15 @@ for s=1:numel(signalname)
         end
             
         
-        OUT.PMR(:,:,sl,s)=PUBBLICAZIONE_PMR_worker(KSS,KSN,o);
+        OUT.PMR(:,:,sl,s)=PMR_worker(KSS,KSN,o);
     end
 end
 
 % parfor sl=1:S.getNumberImageSlices()
 % KSS=S.getKSpaceImageSlice(1,1,1,sl)
-% SNRACM(:,:,sl)=PUBBLICAZIONE_ACM_worker(KSS,KSN,o);
+% SNRACM(:,:,sl)=ACM_worker(KSS,KSN,o);
 % end
 
-OUT.FAST=PUBBLICAZIONE_FAST_worker(OUT.DATA,2,B,0);
+OUT.FAST=FAST_worker(OUT.DATA,2,B,0);
 
 end
