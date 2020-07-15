@@ -130,7 +130,7 @@ classdef CLOUDMRSiemensRawDataReader<CLOUDMRRD
             
             if isempty(this.DATA)
                 this.logIT('any problems reading the number of Slice data is empty','ko');
-            else
+            elsegetEncodedSpaceInfo
                 try
                     o = this.DATA.image.NSli;
                     this.logIT(['file ' this.getFilename() ' has ' num2str(o) ' Slices'], 'ok');
